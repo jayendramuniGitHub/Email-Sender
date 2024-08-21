@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #df7d7d, #7aea92, #ff00ff,#cfe077);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            background-color: #84e1e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="POST" action="">
+        <h2>Send your email</h2>
+        {% csrf_token %}
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" required><br>
+
+        <label for="sender-email">Sender Email:</label>
+        <input type="email" id="sender-email" name="sender-email" required><br>
+
+        <label for="receiver-email">Receiver Email:</label>
+        <input type="email" id="receiver-email" name="receiver-email" required><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br>
+
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
